@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style>
+      #grid {
+        border: 5px solid pink;
+        display:grid;
+        grid-template-columns: 150px 1fr;
+
+        /* 1fr 1fr을 하면 동일하게 자동 조정
+          2fr 1fr 하면 비율 맞게 움직일 것.
+          화면 늘리고 줄여보면 확연히 알 수 있다.*/
+      }
+      div{
+        border: 5px solid gray;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <!-- 하기 두 div 디자인을 동시에 다루기 위해 이를 묶는 div id grid를 만든 것 -->
+    <div id="grid">
+
+      <div>Navigation</div>
+      <div>article</div>
+    </div>
+
+  </body>
+
+</html>
