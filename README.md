@@ -1,1 +1,3 @@
-# lifeCoding-study
+### lifeCoding-study
+
+repository for personal study notes
