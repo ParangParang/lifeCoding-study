@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web3 -JavaScript</title>
+    <meta charset="utf-8">
+
+    <link rel='stylesheet' href="style.css">
+
+    <!-- 1.html, 2.html과 비교해볼 것. java의 클래스 형성이 떠오른다. 객체 지향적 기능? -->
+
+  </head>
+
+  <body>
+
+    <h1>
+      <a href="index.html">WEB</a>
+    </h1>
+
+    <!-- body 태그를 선택하는 것 -->
+  <input type="button" value="Night" onclick="
+    var changeTarget = document.querySelector('body');
+
+    if(this.value === 'Night'){
+      changeTarget.style.backgroundColor = 'black';
+      changeTarget.style.color = 'white';
+      this.value = 'Day'
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while( i < alist.lenghth ){
+          alist[i].style.color = 'powerblue';
+          i = i + 1;
+        }
+
+    } else {
+      changeTarget.style.backgroundColor = 'white';
+      changeTarget.style.color = 'black';
+      this.value = 'Night'
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while( i < alist.lenghth ){
+        alist[i].style.color = 'blue';
+        i = i + 1;
+      }
+    }
+  ">
+
+    <div id="grid">
+      <ol>
+          <li><a href="1.html">HTML</a></li>
+          <li><a href="2.html">CSS</a></li>          <!-- 태그 내 리스트를 묶고, Ordering도 함 -->
+          <li><a href="3.html" style="color:red;text-decoration:underline">JavaScript</a></li>
+      </ol>
+
+
+      <div id="Article">
+        <h2>
+          <a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/" target="_blank" title="JavaScript specification">
+            JavaScript
+          </a>
+        </h2>
+
+          <p>
+          JavaScript (/ˈdʒɑːvəˌskrɪpt/),[10] often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.[11] JavaScript is high-level, often just-in-time compiled and multi-paradigm. It has dynamic typing, prototype-based object-orientation and first-class functions.
+          <br>
+          Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web.[12] Over 97% of websites use it client-side for web page behavior,[13] often incorporating third-party libraries.[14] All major web browsers have a dedicated JavaScript engine to execute the code on the user's device.
+          <br>
+          As a multi-paradigm language, JavaScript supports event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM).
+          <br>
+          The ECMAScript standard does not include any input/output (I/O), such as networking, storage, or graphics facilities. In practice, the web browser or other runtime system provides JavaScript APIs for I/O.
+          <br>
+          JavaScript engines were originally used only in web browsers, but they are now core components of some servers and a variety of applications. The most popular runtime system for this usage is Node.js.
+          <br>
+          Although there are similarities between JavaScript and Java, including language name, syntax, and respective standard libraries, the two languages are distinct and differ greatly in design.
+        </p>
+
+      </div>
+    </div>
+          <!-- should i do this like this? need to make it more readerable -->
+  </body>
+
+</html>

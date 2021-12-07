@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <Head>
+    <title>Web1 - Html</title> <!-- 제목 설정 -->
+    <meta charset="utf-8"> <!-- char:문자 -->
+    <script>
+    function nightDayHandler(itself){
+      var changeTarget = document.querySelector('body');
+
+      if(itself.value === 'night'){
+        changeTarget.style.backgroundColor = 'black';
+        changeTarget.style.color = 'white';
+        itself.value = 'day'
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+        while( i < alist.length ){
+          alist[i].style.color = 'powderblue';
+          i = i + 1;
+        }
+
+      } else {
+        changeTarget.style.backgroundColor = 'white';
+        changeTarget.style.color = 'black';
+        itself.value = 'night'
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while( i < alist.length ){
+          alist[i].style.color = 'blue';
+          i = i + 1;
+        }
+      }
+    }
+
+    </script>
+    <!--이 웹페이지에는 이제 CSS가 적용될 것이다 -->
+    <style>
+
+    body {
+      margin:0px;
+    }
+
+    #active {
+      color:red;
+    }
+
+    #article{
+      padding-right: 20px;
+
+    }
+      .saw{
+        color:gray;
+      }
+      a {
+        color:black;
+        text-decoration: none;
+      }
+
+      h1 {
+        font-size: 50px;
+        text-align: center;
+        margin: 0px;
+        padding: 10px;
+      }
+
+      ol {
+        width: 100px;
+        margin:0;
+        margin-left: 10px;
+        padding:20px;
+      }
+
+      @media (min-width:1000px) {
+        #grid {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+        }
+        #grid ol {
+            padding-right: 0px;
+            border-right: 1px solid gray;
+        }
+        h1 {
+            border-bottom: 1px solid gray;
+        }
+
+      }
+
+    </style>
+
+  </head>
+
+<!-- 위 태그들 : 본문을 설명함 -->
+
+  <body> <!-- 본문은 body로 묶기로 약속함-->
+      <h1>
+        <a href="index.html">WEB</a>
+      </h1>
+
+      <input id = "night_day" type="button" value="night"
+        onclick="nightDayHandler(this);"
+      >
+
+
+      <div id="grid">
+
+
+
+        <ol>
+          <li><a href="1.html" style="color:red;text-decoration:underline;" id:"active">HTML</a></li>
+          <li><a href="2.html" class:"saw">CSS</a></li>          <!-- 태그 내 리스트를 묶고, Ordering도 함 -->
+          <li><a href="3.html" class:"saw">JavaScript</a></li>
+        </ol>
+
+
+      <!-- ul은 li의 부모이다. 같이 쓰인다.-->
+
+        <div id="article">
+
+          <h2><a href="https://html.spec.whatwg.org/multipage/" target="_blank" title="html5 speicification">
+              Hypertext Markup Language (HTML)
+            </a>
+          </h2>
+
+
+
+    <p>이 부분에는 상기 사진에 대한 설명이 들어갈 예정입니다. 그리고 이 문장 중 <Strong>단어 몇 개를 진하게</strong> 표기합니다.
+      또한 <u>이 문장에는 밑줄을 그을 겁니다.</u>
+
+그렇게 나는 정말 많고 답답한 텍스트들을 추가하기 시작했다.
+그런데 줄바꿈을 했지만 띄어쓰기는 전혀 반영되지 않았다.
+진짜 봐줄 수 없을 정도로 조합해서 열이 뻗칠 정도였다.
+그래서 html line change tag를 검색하여 찾아보았다.
+<br>
+이게 맞나? br - 라인 브레이커라는 태그였다.
+<br>이게 줄바꿈이었다. 그러면 단락 바꾸는 건 뭘까? html paragraph change tag를 검색했다.
+<br>이걸 응용해서 위 문단을 묶어보았다.<br>
+  </p>
+
+      </div>
+    </div>
+
+
+  </body>
+
+</html>

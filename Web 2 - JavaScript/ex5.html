@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Function</h1>
+    <h2>Basic</h2>
+
+      <script>
+        function two(){
+          document.write("2-1<br>");
+          document.write("2-2<br>");
+        }
+        document.write("1<br>");
+        two();
+        document.write("3<br>");
+        two();
+
+      </script>
+
+      <h2>Parameter & Argument</h2>
+
+      <script>
+
+        function OnePlusOne(){
+          document.write(1 + 1 + '<br>');
+        }
+
+
+        function sum(left, right){
+          document.write( left + right + '<br>');
+        }
+
+
+        OnePlusOne();
+        sum(2,3);
+
+
+        function sumRed(left, right){
+          document.write('<div style="color:Red">'+ (left + right) +
+                  '</div><br>');
+          }
+          
+        sumRed(3,4)
+
+      </script>
+
+      <h3>Return</h3>
+        <script>
+          function sum2(left, right){
+            return left + right;
+          }
+
+          document.write(sum2(2,3)+'<br>');
+          document.write(sum2(5,7)+'<br>');
+
+        </script>
+
+  </body>
+</html>

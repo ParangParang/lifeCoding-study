@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Objects</h1>
+    <h2>Create</h2>
+
+      <script>
+        /* coworkers라는 객체에 egoing이라는 정보를 programmer라는 태그를 붙여 저장한 것 */
+
+        var coworkers = {
+          "programmer":"egoing",
+          "designer":"leezche"
+        };
+
+        document.write("programmer : " + coworkers.programmer + "<br>" );
+        document.write("designer : " + coworkers.designer + "<br>" );
+
+        coworkers.bookkeeper = "duru";
+        document.write("bookkeeper : " + coworkers.bookkeeper + "<br>");
+              /* 이미 만들어진 객체에 변수 추가 */
+
+        coworkers["data scientist"] = "taeho";
+        document.write("data scientist : " + coworkers["data scientist"] + "<br>");
+              /* 자바스크립트 식별자로 적합하지 않은 이름일 경우, 대괄호 표기법으로 객체의 프로퍼티에 접근한 것
+              특히 프로퍼티 이름이 런타임 시점에 결정되는 경우 유용하다*/
+
+      </script>
+
+      <h2>Iterate</h2>
+        <script>  /*키 값을 가져오는 반복문 / key - 가져오고 싶은 정보에 도달하기 위한 열쇠
+          배열에서는 인덱스Index라고 부른다*/
+
+          for (var key in coworkers){
+            document.write(key+'<br>');
+            document.write(coworkers[key]+'<br><br>');
+
+            document.write(key + ' : ' + coworkers[key]+'<br><br>');
+
+          }
+
+        </script>
+
+        <h2>Property & Method</h2>
+
+          <script>
+            /* coworkers라는 객체에 메소드를 추가하는 좋지 않은 방법 */
+            coworkers.showAll = function(){
+              for (var key in this){
+                document.write(key + ' : ' + coworkers[key]+'<br><br>');
+              }
+            }
+            coworkers.showAll();
+
+          </script>
+
+  </body>
+</html>
