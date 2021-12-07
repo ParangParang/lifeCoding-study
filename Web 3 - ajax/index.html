@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB1 - Welcome</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="colors.js"></script>
+</head>
+<body>
+  <h1><a href="index.html">WEB</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
+  <ol id='nav'>
+
+  </ol>
+
+  <!-- Ajax로 바꿔야하는 부분을 JS로 타겟하기 위해 인위적으로 지정 -->
+
+  <article> <!-- 사용자가 어떤 상호작용을 하면, 아티클 위치에 이런 변경점을 만들어줘-->
+
+  </article>
+
+  <script>
+    function fetchPage(pageName){
+      fetch(pageName).then(function(response){
+        response.text().then(function(text){
+          document.querySelector('article').innerHTML = text;
+        })
+      })
+    }
+
+    if(window.location.hash){
+      fetchPage(window.location.hash.substr(2));
+    } else {
+      fetchPage('welcome');
+    }
+    /* 페이지가 시작될 때 list를 fetch해온다.*/
+    fetch('list').then(function(response){
+      response.text().then(function(text){
+
+        var listNames = text.split(','); /* 제한 둘거면 string.split(seperator, limit); 형태로 */
+        var i = 0;
+        var listTags = '';
+        while (i < listNames.length){
+          var listName = listNames[i];
+          var listName = listName.trim();
+          /* <li><a href="#!html" onclick=" fetchPage('html');">
+            HTML</a></li> - 이 형태를 묶어낸다. */
+          var listTag = '<li><a href="#!'+ listName + '" onclick="fetchPage(\'' + listName + '\')">' + listName + '</a></li>';
+                      /* 역 슬래시 \로 문자열을 구분하는 법, 그 이유 제대로 알기*/
+          listTags = listTags + listTag;
+          i = i+1;
+        }
+
+
+
+        document.querySelector('#nav').innerHTML = listTags;
+      })
+    });
+
+
+
+  </script>
+
+</body>
+</html>

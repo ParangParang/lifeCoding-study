@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <input type="button" value="fetch" onclick="
+        <!--
+      fetch('html').then(function(response){
+        response.text().then(function(text){
+        document.querySelector('article').innerHTML = text;
+      })
+    })
+
+    then 안에 function이 들어있음. '익명 함수'. -->
+
+    function callBackMe (){
+      console.log('response end');
+    }
+
+      fetch('html').then(callBackMe);
+      console.log('1');
+      console.log('2');
+    ">
+    <article>
+
+    </article>
+  </body>
+</html>
